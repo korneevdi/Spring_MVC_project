@@ -1,0 +1,1 @@
+Spring MVC project to create a web page where the user has to enter a password to login. However, there are several levels of access to confidential information for people occupying different positions in the company.
