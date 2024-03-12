@@ -16,4 +16,4 @@ The *applicationContext.xml* contains so called **component-scan**, i.e. the pac
 
 # Code developing
 
-First of all, we can create **MyController** that should be market by the *@Component* annotation. The *@RequestMapping* annotation is used for mapping, i.e. to relate the corresponding method with an address in the browser.
+First of all, we can create **MyController** that should be market by the *@Component* annotation. The *@RequestMapping* annotation is used for mapping, i.e. to relate the corresponding method with an address in the browser. Next, we create two **Views** with some HTML code, which are intended for requesting data and for displaying data in a web page.
