@@ -1,4 +1,4 @@
-package com.zaurtregulov.spring.mvc.validation;
+package com.dmitriikorneev.spring.mvc.validation;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
