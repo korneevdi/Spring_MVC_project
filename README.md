@@ -2,7 +2,7 @@
 
 In this [Java Spring MVC](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html) (Model View Controller) project, a web page is created, where the user has to enter a password to login. There are several levels of access to confidential information for people occupying different positions in the company.
 
-**Model** is a component responsible for application data and for working with this data. **View** is a component responsible for user interaction, that is, for displaying data. **Controller** is the control center that is responsible for communicating between the Model and the View. All business logic is written in the Controller.
+**Model** is a component responsible for application data and for working with this data. Thus, the Model is a container for storing data. Using the Controller, we can add data to the Model and then use it in the View. **View** is a component responsible for user interaction, that is, for displaying data. **Controller** is the control center that is responsible for communicating between the Model and the View. All business logic is written in the Controller.
 
 At the very beginning of the application working, an http-request comes to the **Front Controller**, which is part of Spring and also known as the **Dispatcher Servlet**. This component has already been written and will be used automatically in our application. We must write the remaining components - Model, View and Controller - ourselves. The **View** will be written using the JSP (Java Server Page) page, which is created on HTML and Java code. The application is configured using annotations and a small XML-file.
 
@@ -16,4 +16,10 @@ The *applicationContext.xml* contains so called **component-scan**, i.e. the pac
 
 # Code developing
 
-First of all, we can create **MyController** that should be market by the *@Component* annotation. The *@RequestMapping* annotation is used for mapping, i.e. to relate the corresponding method with an address in the browser. Next, we create two **Views** with some HTML code, which are intended for requesting data and for displaying data in a web page.
+First of all, we can create **MyController** that should be market by the *@Component* annotation. The *@RequestMapping* annotation is used for mapping, i.e. to relate the corresponding method with an address in the browser. We can also use this annotation before creating a class, then it will apply to all methods of the class. Also, remember that this annotation must always contain different values, otherwise the Controller will become confused about which method it should call. Next, we create two **Views** with some HTML code, which are intended for requesting data and for displaying data in a web page. We can add any data to the **Model** usint the *addAttribute()* method and then display this data in **Views**. To do this, we can make some simple changes in *.jsp* files: *$ + name of the attribute*. To use the Model, we must of course use it as a method parameter.
+
+To display information in the View and to work with this information, we can use the Spring MVC functionality. There are several forms for this: input, select, radiobutton, checkbox and others. To use these forms in Views, we should add line
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
+tj the *.jsp* files.
