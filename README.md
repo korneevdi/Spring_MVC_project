@@ -22,4 +22,8 @@ To display information in the View and to work with this information, we can use
 
 <pre><code><%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %></pre></code>
 
-tj the *.jsp* files.
+to the *.jsp* files. You can also use validation of the entered data using **Java Standard Bean Validation API**. This is a list of rules that are implemented by **Hibernate Validator**. It's not related to databases, it's just another branch of Hibernate's work. This is why we add the *hibernate-validator* dependency to our *pom.xml* file. You can validate the entered data using various annotations, such as *@Size*, *@NotEmpty*, *@Min*, *@Pattern*, etc. You can see examples in the *Employee* class.
+
+I also create my own annotation *@CheckEmail*. For this purpose I created a separate Validation package. It creates a new annotation and a corresponding class. To create a new annotation, use the *@interface* keyword. The *@Target* annotation is used to indicate where we will use it - in this case, for fields. The *@Retention* annotation means that information about this annotation must be retained until program execution. The *@Constraint* annotation contains the class that we create for this annotation. It is this class that will process our new annotation.
+
+In *.jsp* files, we then should use the *errors* form with a corresponding path. The **BindingResult** class object is used to find out whether the validation passed or failed. If validation fails, then we remain in the same View for entering information.
