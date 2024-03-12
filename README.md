@@ -20,6 +20,6 @@ First of all, we can create **MyController** that should be market by the *@Comp
 
 To display information in the View and to work with this information, we can use the Spring MVC functionality. There are several forms for this: input, select, radiobutton, checkbox and others. To use these forms in Views, we should add line
 
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<pre><code><%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %></pre></code>
 
 tj the *.jsp* files.
